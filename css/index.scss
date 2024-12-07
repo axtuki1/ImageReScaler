@@ -1,0 +1,63 @@
+section {
+    margin: 20px 0;
+}
+
+section.main {
+    margin: 0 20px;
+}
+
+section.output {
+    display: flex;
+    flex-direction: row;
+    section.output-group {
+        width: auto;
+        flex: 1;
+        margin: 0 10px;
+        img {
+            height: auto;
+            background-color: #000;
+        }
+    }
+}
+
+section.row {
+    display: flex;
+    flex-direction: row;
+    & > section.col {
+        margin: 0;
+        margin-right: 15px;
+        width: 10vw;
+        &.fileName {
+            width: 30vw;
+        }
+        &.size {
+            width: 17.5vw;
+        }
+        &.size-preset{
+            width: auto;
+            display: flex;
+            flex-direction: row;
+            & > * {
+                margin-right: 7.5px;
+            }
+        }
+        &.img {
+            width: 40vw;
+            .input-area input {
+                width: 30vw;
+                margin: 0 7.5px;
+            }
+        }
+        .input-area{
+            display: flex;
+            flex-direction: row;
+            input {
+                width: 7.5vw;
+                margin: 0 7.5px;
+            }
+            input:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}

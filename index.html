@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/base.min.css">
+    <link rel="stylesheet" href="./css/index.min.css">
+    <title>Image ReScaler</title>
+</head>
+
+<body>
+    <section class="main">
+        <h1>画像リサイズツール</h1>
+        <p>異なるアスペクト比の場合は特定の色で塗ります</p>
+        <hr>
+        <section class="interface">
+            <section class="input-area">
+                <section class="row">
+                    <section class="col fileName">
+                        ファイル名<br>
+                        <input type="text" id="name" value="test1.png" placeholder="ファイル名">
+                    </section>
+                    <section class="col color">
+                        背景色<br>
+                        <input type="color" id="color" value="#000" placeholder="背景色">
+                    </section>
+                    <section class="col blur">
+                        ブラー強度<br>
+                        <div class="input-area">
+                            <input type="number" id="blur" value="10" placeholder="ブラー"> px
+                        </div>
+                    </section>
+                </section>
+                <section class="row">
+                    <section class="col size">
+                        解像度<br>
+                        <div class="input-area">
+                            <input type="number" id="widthSize" value="2048" placeholder="横" class="inline"> x
+                            <input type="number" id="heightSize" value="1152" placeholder="縦" class="inline">
+                        </div>
+                    </section>
+                    <section class="col size-preset">
+                        <button onClick="preset(this)" class="btn">1920x1080</button>
+                        <button onClick="preset(this)" class="btn">2048x1152</button>
+                    </section>
+                </section>
+                <section class="row">
+                    <section class="col img">
+                        収める画像
+                        <div class="input-area">
+                            <button onClick="delFile(this)" class="btn inline">削除</button> <input type="file" id="inputFile"
+                                class="inline">
+                        </div>
+                    </section>
+                    <section class="col img">
+                        背景画像<br>
+                        <div class="input-area">
+                            <button onClick="delFile(this)" class="btn inline">削除</button> <input type="file"
+                                id="inputBGFile" class="inline">
+                        </div>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <button id="gen" onClick="gen()" class="btn">生成</button>
+        <button id="download" onClick="download()" class="btn">ダウンロード</button>
+        <section class="output">
+            <section class="output-group">
+                <img id="preview">
+            </section>
+        </section>
+        <script src="js/index.js"></script>
+    </section>
+</body>
+
+</html>
