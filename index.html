@@ -24,6 +24,12 @@
                         背景色<br>
                         <input type="color" id="color" value="#000" placeholder="背景色">
                     </section>
+                    <section class="col alpha">
+                        背景色 不透明度<br>
+                        <div class="input-area">
+                            <input type="range" min="0" max="1000" id="alpha" value="1000" placeholder="不透明度"> <input type="number" id="alpha_num" value="100" placeholder="不透明度"> %
+                        </div>
+                    </section>
                     <section class="col blur">
                         ブラー強度<br>
                         <div class="input-area">
@@ -40,6 +46,7 @@
                         </div>
                     </section>
                     <section class="col size-preset">
+                        <button onClick="preset(this)" class="btn">1024x1024</button>
                         <button onClick="preset(this)" class="btn">1920x1080</button>
                         <button onClick="preset(this)" class="btn">2048x1152</button>
                     </section>

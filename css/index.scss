@@ -48,9 +48,17 @@ section.row {
                 margin: 0 7.5px;
             }
         }
+        &.alpha{
+            width: 20vw;
+            .input-area input[type="number"] {
+                width: 5vw;
+                margin: 0 7.5px;
+            }
+        }
         .input-area{
             display: flex;
             flex-direction: row;
+            align-items: baseline;
             input {
                 width: 7.5vw;
                 margin: 0 7.5px;
@@ -60,4 +68,12 @@ section.row {
             }
         }
     }
+}
+
+#preview {
+    flex-grow: 1;
+    background: linear-gradient(45deg, #a9a9a9 25%, transparent 25%, transparent 75%, #a9a9a9 75%), linear-gradient(45deg, #a9a9a9 25%, transparent 25%, transparent 75%, #a9a9a9 75%);
+    background-color: dimgray;
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
 }

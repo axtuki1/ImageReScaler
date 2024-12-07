@@ -5,8 +5,9 @@ const imageGen = (image, bgImage) => {
     canvas.width = document.getElementById("widthSize").value;
     canvas.height = document.getElementById("heightSize").value;
     const context = canvas.getContext("2d");
+    context.clearRect(0, 0, canvas.width, canvas.height);
     // 背景色描画
-    context.fillStyle = document.getElementById("color").value;
+    context.fillStyle = colorChange(document.getElementById("color").value, document.getElementById("alpha").value / 1000);
     context.fillRect(0, 0, canvas.width, canvas.height);
 
     const canvasAspect = canvas.width / canvas.height;
@@ -96,6 +97,12 @@ const gen = () => {
 
 }
 
+const colorChange = (color, alpha) => {
+    let r = parseInt(color.substr(1, 2), 16);
+    let g = parseInt(color.substr(3, 2), 16);
+    let b = parseInt(color.substr(5, 2), 16);
+    return "rgba(" + r + "," + g + "," + b + "," + alpha + ")";
+}
 
 const downloadImage = (imageUrl, n = "") => {
     let name = document.querySelector("#name").value.replace(/\.png/g, '');
@@ -104,6 +111,14 @@ const downloadImage = (imageUrl, n = "") => {
     link.download = name + n + ".png";
     link.click();
 }
+
+document.getElementById("alpha").addEventListener("input", (e) => {
+    document.getElementById("alpha_num").value = document.getElementById("alpha").value / 10;
+});
+
+document.getElementById("alpha_num").addEventListener("input", (e) => {
+    document.getElementById("alpha").value = document.getElementById("alpha_num").value * 10;
+});
 
 document.getElementById("inputFile").addEventListener("input", (e) => {
     gen();
